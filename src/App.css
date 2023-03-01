@@ -1,0 +1,11 @@
+@font-face {
+  font-family: Airbnb_Bd;
+  font-weight: 600;
+  src: url('./assets/fonts/AirbnbCereal_W_Bd.otf');
+}
+
+@font-face {
+  font-family: Airbnb_Md;
+  font-weight: 500;
+  src: url('./assets/fonts/AirbnbCereal_W_Md.otf');
+}
