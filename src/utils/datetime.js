@@ -31,3 +31,13 @@ export const dateBasedOn24H = value => {
     return '방금 전';
   }
 };
+
+const WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+//last sunday ~ this saturday
+export const getWeekDaysOfMonth = () => {
+  let lastSunDay = dayjs().day(-0).$D;
+  return Array.from({ length: 7 }, (_, index) => {
+    return { day: lastSunDay++, name: WEEK_DAYS[index] };
+  });
+};
