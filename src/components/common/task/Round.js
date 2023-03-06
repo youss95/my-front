@@ -10,19 +10,17 @@ const Wrapper = styled.div`
     } else if (props.type === 'On') {
       return '#CABDFF';
     } else {
-      return '#FFD88D';
+      return '#F8F8FB';
     }
   }};
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-const Round = ({ type, icon }) => {
+const Round = ({ type, icon, number }) => {
   return (
     <div>
-      <Wrapper type={type}>
-        <img src={icon} alt="check" />
-      </Wrapper>
+      <Wrapper type={type}>{icon ? <img src={icon} alt="check" /> : number}</Wrapper>
     </div>
   );
 };

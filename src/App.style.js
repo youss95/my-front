@@ -160,7 +160,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const BaseLayout = styled.div`
-  padding: 0 5px 120px 5px;
+  padding: 0 0 120px 0;
   min-height: 100vh;
   overflow-y: auto;
 `;
