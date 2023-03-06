@@ -28,13 +28,13 @@ const TabUnit = styled.div`
   }
 `;
 //tabIndex 받아서 조건문으로 컴포넌트 렌더링
-const Tab = ({ tabname, onClick }) => {
+const Tab = ({ tabname, changeTab }) => {
   return (
     <TabUnit>
-      <span className={tabname === 'left' ? 'active' : ''} onClick={onClick}>
+      <span className={tabname === 'left' ? 'active' : ''} onClick={() => changeTab('left')}>
         My Work
       </span>
-      <span className={tabname === 'right' ? 'active' : ''} onClick={onClick}>
+      <span className={tabname === 'right' ? 'active' : ''} onClick={() => changeTab('right')}>
         Calendar
       </span>
     </TabUnit>

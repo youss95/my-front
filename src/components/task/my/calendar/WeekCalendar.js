@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  border: 1px solid black;
-  padding: 5px;
+  padding: 10px 5px 10px 5px;
   flex: 1;
   height: 100%;
   span {
     display: block;
     text-align: center;
+    margin-bottom: 5px;
   }
 `;
 
