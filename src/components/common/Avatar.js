@@ -3,6 +3,7 @@ import calendar from '../../assets/images/edit.svg';
 import check from '../../assets/images/hand.svg';
 const Container = styled.div`
   display: flex;
+  width: 60px;
 `;
 
 const Profile = styled.div`
