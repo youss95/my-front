@@ -17,8 +17,8 @@ const Wrapper = styled.div`
 const ProjectName = () => {
   return (
     <Wrapper>
-      <span>name</span>
-      <span>assign to</span>
+      <span>Task Name</span>
+      <span>Assign to</span>
     </Wrapper>
   );
 };

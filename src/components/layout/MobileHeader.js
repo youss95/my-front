@@ -14,37 +14,13 @@ const MobileHeader = () => {
   return (
     <TopWrapper>
       {/* 모바일 상단바 표현(임시) */}
-      <div
-        style={{
-          width: '100%',
-          color: 'white',
-          position: 'relative',
-          top: '15px',
-          zIndex: 9999,
-        }}
-      >
-        <span>9:41</span>
-        <div style={{ float: 'right' }}>
-          <RiWifiFill style={{ marginRight: '10px' }} />
-          <RiBatteryFill />
-        </div>
-      </div>
       <UtilesWrapper>
         <RiMenu2Line style={hamburgerIconStyle} />
-        <Location>
-          Current Location
-          <RiArrowDropDownFill className="arrowIcon" />
-          <br />
-          <b>New Yourk, USA</b>
-        </Location>
+        <Location>Current Location</Location>
         <AlarmIconWrap className="active">
           <RiNotification2Line />
         </AlarmIconWrap>
       </UtilesWrapper>
-      <SearchArea>
-        <RiSearchLine />
-        <SearchInput placeholder="Search..." />
-      </SearchArea>
     </TopWrapper>
   );
 };
@@ -72,7 +48,7 @@ const hamburgerIconStyle = {
 const UtilesWrapper = styled.div`
   width: 100%;
   position: relative;
-  margin-top: 44px;
+  margin-top: 14px;
   z-index: 999;
   height: auto;
 `;

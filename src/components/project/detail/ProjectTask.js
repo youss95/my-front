@@ -11,11 +11,11 @@ const Wrapper = styled.div`
   padding: 5px;
 `;
 
-const ProjectTask = () => {
+const ProjectTask = ({ name }) => {
   return (
     <>
       <Wrapper>
-        <span>name</span>
+        <span>{name}</span>
         <Avatar imgPath={img} />
       </Wrapper>
     </>

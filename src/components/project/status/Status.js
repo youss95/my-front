@@ -44,11 +44,20 @@ const Plus = styled.div`
     content: '';
   }
 `;
-const Status = () => {
+const Status = ({ status }) => {
+  const getStatusIcon = () => {
+    if (status === 'backlog') {
+      return backlog;
+    } else if (status === 'todo') {
+      return edit;
+    } else {
+      return check;
+    }
+  };
   return (
     <Wrapper>
       <IconWrapper>
-        <img src={backlog} alt="backlog" />
+        <img src={getStatusIcon()} alt="backlog" />
         <span>name</span>
         <Round number={1} />
       </IconWrapper>
