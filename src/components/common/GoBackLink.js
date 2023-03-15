@@ -1,29 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import gobackArrow from '../../assets/images/gobackIcon.svg';
+import gobackArrow from 'assets/images/gobackIcon.svg';
+import { useNavigate } from 'react-router-dom';
 const GoBackButton = styled.div`
   width: 100%;
   padding: 15px 0px;
-  margin-top: 5px;
+
   display: flex;
   align-items: center;
-  img {
-    width: 22px;
-    height: 22px;
-  }
+  justify-content: center;
+  position: relative;
   h2 {
-    margin-left: 10px;
     font-weight: 600;
     font-size: 20px;
     line-height: 22px;
-    margin-top: 2px;
   }
 `;
-
+const ImgWrapper = styled.div`
+  position: absolute;
+  left: 0;
+`;
 const GoBackLink = ({ children }) => {
+  const navigate = useNavigate();
   return (
     <GoBackButton>
-      <img src={gobackArrow} alt="arrow" />
+      <ImgWrapper onClick={() => navigate(-1)}>
+        <img src={gobackArrow} alt="arrow" />
+      </ImgWrapper>
       <h2>{children}</h2>
     </GoBackButton>
   );

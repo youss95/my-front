@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { calculateTextLenth } from 'utils/descLength';
 import Avatar from '../Avatar';
 import ProgressBar from '../ProgressBar';
 
@@ -39,12 +40,13 @@ const Wrapper = styled.div`
 `;
 
 const RecentTaskCard = ({ title }) => {
-  title = title.length > 30 ? title.substr(0, 30).concat('...') : title;
+  //title = title.length > 30 ? title.substr(0, 30).concat('...') : title;
+  const limitedTitle = calculateTextLenth(title, 30);
   return (
     <Container>
       <Content>
         <Title>
-          <span>{title}</span>
+          <span>{limitedTitle}</span>
         </Title>
         <Status>
           <span>private</span>&nbsp; * &nbsp;<p>3 days left</p>
