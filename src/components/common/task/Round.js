@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     } else if (props.type === 'On') {
       return '#CABDFF';
     } else {
-      return '#F8F8FB';
+      return '#FFD88D';
     }
   }};
   display: flex;

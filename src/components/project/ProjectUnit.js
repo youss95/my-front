@@ -5,6 +5,7 @@ import Status from './status/Status';
 
 const Wrapper = styled.div`
   margin-bottom: 15px;
+  margin-top: 10px;
 `;
 const ProjectUnit = ({ status }) => {
   return (
@@ -12,7 +13,7 @@ const ProjectUnit = ({ status }) => {
       <Wrapper>
         <Status status={status} />
         <ProjectName />
-        <ProjectTask />
+        <ProjectTask name={'오늘은 끝'} />
         <ProjectTask />
       </Wrapper>
     </>

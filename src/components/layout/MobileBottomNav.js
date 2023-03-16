@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 import PALETTE from '../../constants/palette';
 import { Link } from 'react-router-dom';
 import { RiHomeSmileFill, RiCalendarCheckFill, RiMapPinFill, RiUserFill } from 'react-icons/ri';
@@ -53,13 +53,23 @@ const StyledLink = styled(Link)`
     font-size: 1.8rem;
     margin-bottom: 0.3rem;
   }
-  &.active,
-  &:focus {
-    color: ${PALETTE.BLACK[0]};
-    svg {
-      color: ${PALETTE.BLUE[1]};
+  ${props => {
+    if (props.active) {
+      return css`
+        color: ${PALETTE.BLACK[0]};
+        svg {
+          color: ${PALETTE.BLUE[1]};
+        }
+      `;
+    } else {
+      return css`
+        color: ${PALETTE.WHITE[1]};
+        svg {
+          color: #dadada;
+        }
+      `;
     }
-  }
+  }}
 `;
 
 const PlusIcon = styled.div`
@@ -86,16 +96,21 @@ const PlusIcon = styled.div`
   }
 `;
 const MobileBottomNav = () => {
+  const tabList = ['1', '2', '3', '4'];
+  const [currentTab, setCurrentTab] = useState(tabList[0]);
+  const changeTabStatus = tabName => {
+    setCurrentTab(tabName);
+  };
   return (
     <Container>
-      <StyledLink to="/" className="active">
+      <StyledLink to="/" active={currentTab === '1'} onClick={() => changeTabStatus('1')}>
         <RiHomeSmileFill />
         <span>Explore</span>
       </StyledLink>
 
-      <StyledLink to="/">
+      <StyledLink to="/task" active={currentTab === '2'} onClick={() => changeTabStatus('2')}>
         <RiCalendarCheckFill />
-        <span>이벤트</span>
+        <span>Task</span>
       </StyledLink>
 
       <StyledLink to="/">
@@ -107,14 +122,14 @@ const MobileBottomNav = () => {
         </AddEventButton>
       </StyledLink>
 
-      <StyledLink to="/">
+      <StyledLink to="/project" active={currentTab === '3'} onClick={() => changeTabStatus('3')}>
         <RiMapPinFill />
-        <span>지도</span>
+        <span>Project</span>
       </StyledLink>
 
-      <StyledLink to="/">
+      <StyledLink to="/" active={currentTab === '4'} onClick={() => changeTabStatus('4')}>
         <RiUserFill />
-        <span>프로필</span>
+        <span>Profile</span>
       </StyledLink>
     </Container>
   );

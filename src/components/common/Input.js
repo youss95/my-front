@@ -49,6 +49,9 @@ export const Input = styled.input`
     color: #747688;
     font-size: 16px;
   }
+  :focus {
+    border: 2px solid blue;
+  }
 `;
 
 export const Post = styled.input`
