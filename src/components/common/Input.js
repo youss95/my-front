@@ -42,7 +42,7 @@ export const Input = styled.input`
   width: 100%;
   font-size: 1.25rem;
   height: 100%;
-  border: none;
+  border: 1px solid #747688;
   outline: none;
   border-radius: 10px;
   ::placeholder {

@@ -37,10 +37,10 @@ const ModalHeader = styled.div`
 `;
 let portalElement = document.getElementById('modal');
 
-const Modal = ({ children, showModalHandler, height, width, header }) => {
+const Modal = ({ children, showModal, height, width, header }) => {
   return (
     <>
-      {createPortal(<Backdrop onClick={showModalHandler} />, portalElement)}
+      {createPortal(<Backdrop onClick={showModal} />, portalElement)}
       {createPortal(
         <ModalOverlay height={height} width={width}>
           <ModalHeader>{header}</ModalHeader>

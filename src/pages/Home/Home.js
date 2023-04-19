@@ -7,9 +7,11 @@ import SubHeader from 'components/common/SubHeader';
 import TaskInfo from 'components/task/TaskInfo';
 import React from 'react';
 import * as Styled from './Home.style';
+import useModal from 'hooks/useModal';
 
 const Home = () => {
   const title = 'title title title title title11';
+  const [isModalOpen, setIsModalOpen, modalOpenHandler] = useModal(false);
   return (
     <>
       <Styled.Wrapper>
@@ -19,12 +21,14 @@ const Home = () => {
         <SubHeader text={'Recent'} />
         <RecentTaskCard title={title} />
       </Styled.Wrapper>
-      <Modal height={'30vh'} width={'90%'} header={'Create Project'}>
-        <StyledInput type={'text'} placeholder={'Project Name'} />
-        <StyledButton size={'lg'} backcolor={'#3D56F0'} color={'white'}>
-          Create
-        </StyledButton>
-      </Modal>
+      {isModalOpen && (
+        <Modal height={'30vh'} width={'90%'} header={'Create Project'}>
+          <StyledInput type={'text'} placeholder={'Project Name'} />
+          <StyledButton size={'lg'} backcolor={'#3D56F0'} color={'white'}>
+            Create
+          </StyledButton>
+        </Modal>
+      )}
     </>
   );
 };
