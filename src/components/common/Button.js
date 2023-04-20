@@ -9,8 +9,8 @@ export const StyledButton = styled.button`
     if (props.size === 'lg') {
       return css`
         padding: 10px 50px;
-        width: 85%;
-        height: 58px;
+        width: 100%;
+        height: 48px;
       `;
     } else if (props.size === 'md') {
       return css`
