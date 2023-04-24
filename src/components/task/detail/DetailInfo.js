@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-
+const Container = styled.div`
+  border-top: 3px solid rgba(211, 211, 211, 0.3);
+  margin-top: 10px;
+`;
 const InfoWrapper = styled.div`
-  padding: 10px;
-  border: 1px solid black;
+  padding: 20px 10px 20px 10px;
+
   h2 {
     font-weight: 600;
     font-size: 20px;
@@ -27,19 +30,21 @@ const Content = styled.div`
 const DetailInfo = () => {
   return (
     <>
-      <InfoWrapper>
-        <h2>Design and KK</h2>
-        <Detail>
-          <Content>
-            <span>Due Date</span>
-            <p>Fri, 15 Jul 2020</p>
-          </Content>
-          <Content>
-            <span>Stauts</span>
-            <p>Backlog</p>
-          </Content>
-        </Detail>
-      </InfoWrapper>
+      <Container>
+        <InfoWrapper>
+          <h2>Design and KK</h2>
+          <Detail>
+            <Content>
+              <span>Due Date</span>
+              <p>Fri, 15 Jul 2020</p>
+            </Content>
+            <Content>
+              <span>Stauts</span>
+              <p>Backlog</p>
+            </Content>
+          </Detail>
+        </InfoWrapper>
+      </Container>
     </>
   );
 };

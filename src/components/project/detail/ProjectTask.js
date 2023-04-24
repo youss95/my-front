@@ -4,11 +4,12 @@ import img from '../../../assets/images/violin.svg';
 const Wrapper = styled.div`
   border-bottom: 1px solid black;
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
+  font-weight: 600;
 `;
 
 const ProjectTask = ({ name }) => {

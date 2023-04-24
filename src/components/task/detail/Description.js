@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 import desc from 'assets/images/description.svg';
 import { calculateTextLenth } from 'utils/descLength';
+import DetailHeader from './DetailHeader';
+
+const Container = styled.div`
+  border-top: 10px solid rgba(211, 211, 211, 0.3);
+`;
 const Wrapper = styled.div`
-  border: 1px solid black;
-  padding: 5px;
+  padding: 20px 10px 20px 10px;
   span {
     font-size: 18px;
-    font-weight: 600;
   }
   p {
     padding: 15px 30px 15px 30px;
   }
-`;
-
-const Top = styled.div`
-  padding-top: 10px;
-  display: flex;
-  gap: 5px;
-  align-items: center;
+  dd {
+    font-size: 12px;
+    color: blue;
+    margin-left: 30px;
+  }
 `;
 
 const Description = () => {
@@ -25,14 +26,13 @@ const Description = () => {
   const limit = 10;
   let text = calculateTextLenth(ex, limit);
   return (
-    <Wrapper>
-      <Top>
-        <img src={desc} alt="description" />
-        <span>Description</span>
-      </Top>
-      <p>{text}</p>
-      {ex.length > limit ? <span>See Detail</span> : ''}
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <DetailHeader name={'Description'} plus={false} />
+        <p>{text}</p>
+        {ex.length > limit ? <dd>See Detail</dd> : ''}
+      </Wrapper>
+    </Container>
   );
 };
 

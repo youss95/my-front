@@ -13,10 +13,10 @@ const Backdrop = styled.div`
 
 const ModalOverlay = styled.div`
   position: fixed;
-  top: 20vh;
+  top: 30vh;
   left: 5%;
-  width: 90%;
-  height: 40vh;
+  width: ${props => props.width};
+  height: ${props => props.height};
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
@@ -26,13 +26,28 @@ const ModalOverlay = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+const ModalHeader = styled.div`
+  width: 100%;
+  height: 30px;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 45px;
+`;
 let portalElement = document.getElementById('modal');
 
-const Modal = ({ children, showModalHandler }) => {
+const Modal = ({ children, showModal, height, width, header }) => {
   return (
     <>
-      {createPortal(<Backdrop onClick={showModalHandler} />, portalElement)}
-      {createPortal(<ModalOverlay>{children}</ModalOverlay>, portalElement)}
+      {createPortal(<Backdrop onClick={showModal} />, portalElement)}
+      {createPortal(
+        <ModalOverlay height={height} width={width}>
+          <ModalHeader>{header}</ModalHeader>
+          {children}
+        </ModalOverlay>,
+        portalElement,
+      )}
     </>
   );
 };
