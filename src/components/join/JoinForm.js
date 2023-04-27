@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { SubmitButton } from 'components/common/Button';
 import { useEffect, useState } from 'react';
 import { validatePassword } from 'utils/validation';
+import request from 'api/requestMethods';
 
 const Form = styled.form`
   margin-top: 30px;
@@ -16,9 +17,16 @@ const ErrMsg = styled.div`
   gap: 10px;
   padding: 10px;
 `;
-const JoinForm = () => {
+const JoinForm = ({ mutate }) => {
   const onSubmit = e => {
     e.preventDefault();
+    if (password !== passwordConfirm) return;
+    mutate({ loginId, password });
+    // const resp = request.post('/api/member/join', {
+    //   loginId,
+    //   password,
+    // });
+    // console.log('r', resp);
   };
   const [{ loginId, password, passwordConfirm }, onChange] = useInput({
     loginId: '',
@@ -32,7 +40,7 @@ const JoinForm = () => {
   }, [password]);
   return (
     <>
-      <Form>
+      <Form onSubmit={onSubmit}>
         <StyledInput
           icon={personImg}
           placeholder="LOGIN ID"
@@ -62,7 +70,7 @@ const JoinForm = () => {
         />
         {passwordMsg && (
           <ErrMsg>
-            <img src={errIcon} />
+            <img src={errIcon} alt="error" />
             <p>{passwordMsg}</p>
           </ErrMsg>
         )}

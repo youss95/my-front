@@ -1,6 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'http://localhost:8080/api';
 
 const request = axios.create({
   baseURL: BASE_URL,
