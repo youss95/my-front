@@ -33,7 +33,8 @@ const ImgContainer = styled.div`
   width: 40px;
   padding: 8px 5px;
   height: 100%;
-  border-radius: 12px 0 0 12px;
+  outline: none;
+  border: none;
 `;
 export const Icon = styled.img``;
 
@@ -48,9 +49,6 @@ export const Input = styled.input`
   ::placeholder {
     color: #747688;
     font-size: 16px;
-  }
-  :focus {
-    border: 2px solid blue;
   }
 `;
 
@@ -69,15 +67,34 @@ export const Post = styled.input`
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+`;
+const FormInput = styled.input`
+  border: none;
+  border-bottom: 1px solid #808d9e;
+  padding: 10px;
+  width: 100%;
+  :focus {
+    outline: none;
+  }
+  ::placeholder {
+    color: #747688;
+    font-size: 12px;
+  }
+`;
+
 const StyledInput = ({ placeholder, icon, type, value, onChange, name, required }) => {
   return (
-    <Container>
+    <Wrapper>
       {icon && (
         <ImgContainer>
-          <Icon src={icon} />
+          <img src={icon} />
         </ImgContainer>
       )}
-      <Input
+      <FormInput
         type={type}
         required={required}
         placeholder={placeholder}
@@ -85,7 +102,7 @@ const StyledInput = ({ placeholder, icon, type, value, onChange, name, required 
         onChange={onChange}
         name={name}
       />
-    </Container>
+    </Wrapper>
   );
 };
 

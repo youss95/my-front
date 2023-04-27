@@ -7,6 +7,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { BaseLayout, GlobalStyle } from './App.style';
 import { Home } from './pages/Home/index';
+import Join from 'pages/join/Join';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/project" element={<Project />} />
           <Route path="/task/new" element={<TaskForm />} />
           <Route path="/task/:taskId" element={<TaskDetail />} />
+          <Route path="/join" element={<Join />} />
         </Routes>
       </BaseLayout>
       <MobileBottomNav />

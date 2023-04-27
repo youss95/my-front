@@ -9,7 +9,6 @@ import StyledInput from 'components/common/Input';
 import { StyledButton } from 'components/common/Button';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import CustomDateInput from 'components/common/CustomDateInput';
 import './datepicker.css';
 // https://react-icons.github.io/react-icons/icons?name=ri
 

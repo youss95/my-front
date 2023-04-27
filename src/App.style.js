@@ -148,7 +148,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Noto Sans KR', sans-serif;
     color: #120D26;
     // background: linear-gradient(to bottom right, #ffffff 0%,#E7EFF6 100%);
-    background: rgba(231, 239, 246, .2);
+    // background: rgba(231, 239, 246, .2);
   }
   input, button {
     font-family: inherit;
