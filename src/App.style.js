@@ -163,4 +163,7 @@ export const BaseLayout = styled.div`
   padding: 0 0 120px 0;
   min-height: 100vh;
   overflow-y: auto;
+  width: 390px;
+  border: 1px solid black;
+  margin: 0 auto;
 `;

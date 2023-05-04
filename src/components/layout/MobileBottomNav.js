@@ -16,18 +16,14 @@ const Container = styled.div`
   background: white;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 390px;
   display: flex;
   justify-content: space-around;
-  max-width: 500px;
   align-items: center;
   height: 80px;
   z-index: 5;
   padding: 5px 0;
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.15);
-  @media screen and (min-width: 480px) {
-    display: none;
-  }
 `;
 
 /* const ActionButton = styled.button`

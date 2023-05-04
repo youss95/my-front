@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { SubmitButton } from 'components/common/Button';
 import { useEffect, useState } from 'react';
 import { validatePassword } from 'utils/validation';
-import request from 'api/requestMethods';
+import { DUPLICATE_PASSWORD } from 'constants/msg';
 
 const Form = styled.form`
   margin-top: 30px;
@@ -20,7 +20,10 @@ const ErrMsg = styled.div`
 const JoinForm = ({ mutate }) => {
   const onSubmit = e => {
     e.preventDefault();
-    if (password !== passwordConfirm) return;
+    if (password !== passwordConfirm) {
+      setDuplicateMsg(DUPLICATE_PASSWORD);
+      return;
+    }
     mutate({ loginId, password });
     // const resp = request.post('/api/member/join', {
     //   loginId,
@@ -34,6 +37,7 @@ const JoinForm = ({ mutate }) => {
     passwordConfirm: '',
   });
   const [passwordMsg, setPasswordMsg] = useState('');
+  const [duplicateMsg, setDuplicateMsg] = useState('');
   useEffect(() => {
     const pwMsg = validatePassword(password);
     pwMsg ? setPasswordMsg(pwMsg) : setPasswordMsg('');
@@ -72,6 +76,12 @@ const JoinForm = ({ mutate }) => {
           <ErrMsg>
             <img src={errIcon} alt="error" />
             <p>{passwordMsg}</p>
+          </ErrMsg>
+        )}
+        {duplicateMsg && (
+          <ErrMsg>
+            <img src={errIcon} alt="error" />
+            <p>{duplicateMsg}</p>
           </ErrMsg>
         )}
 

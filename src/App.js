@@ -22,8 +22,8 @@ const App = () => {
           <Route path="/task/:taskId" element={<TaskDetail />} />
           <Route path="/join" element={<Join />} />
         </Routes>
+        <MobileBottomNav />
       </BaseLayout>
-      <MobileBottomNav />
     </div>
   );
 };
